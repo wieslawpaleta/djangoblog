@@ -11,15 +11,21 @@
         <h3>Witam na stronie bloga!</h3>
         <h4>Witam na stronie bloga!</h4>
     </div>
+
+    {% comment "komentarz autora" %}
+    <p>Tutaj lista postów</p>
+    {% endcomment %}
+    {% for post in posts %}
     <div>
-<a href="https://www.youtube.com">aha</a>
+        <p>opublikowany: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
+    {% endfor %}
     <div>
-        <h1>Witam na stronie bloga!</h1>
-        <h2>Witam na stronie bloga!</h2>
-        <h3>Witam na stronie bloga!</h3>
-        <h4>Witam na stronie bloga!</h4>
+
     </div>
+
 </body>
 
 </html>
