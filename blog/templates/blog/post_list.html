@@ -7,24 +7,30 @@
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         </head>
 <body class="lato-regular">
-    <div>
+    <div class="page-header">
         <h1><a href="">Witam na stronie bloga dla programistów!</a></h1>
         <h2>Blog o programowaniu</h2>
-        <h3>Autor: no ja</h3>
-        <h4>Nie wiem jakie mam prawa</h4>
     </div>
 
     {% comment "komentarz autora" %}
-    <p>Tutaj lista postów</p>
+    Tutaj lista postów
     {% endcomment %}
+<div class="content container">
+    <div class="row">
     {% for post in posts %}
-    <div>
-        <p>opublikowany: {{ post.published_date }}</p>
+    <div class="col-md-8"></div>
+       <div class="post">
+       <div class="data">
+           <p>opublikowany: {{ post.published_date }}</p>
+       </div>
         <h2><a href="">{{ post.title }}</a></h2>
         <em>{{ post.text|linebreaksbr }}</em>
-    </div>
+        </div>
     {% endfor %}
-    <div>
+</div>
+</div>
+</div>
+    <div class="stopka">
 
     </div>
 
