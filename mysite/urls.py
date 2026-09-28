@@ -24,5 +24,11 @@ from blog.views import Image, ImageDisplay
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('blog.urls')),
+    path('image/', Image.as_view(), name='image'),
+    path('image/<int:pk>', ImageDisplay.as_view(),name="image_display"),
     # path(r'^post/(\d+)$', admin.site.urls),
+
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root_=_settings.MEDIA_ROOT)
