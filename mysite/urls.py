@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from blog.views import Image, ImageDisplay
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>', ImageDisplay.as_view(),name="image_display"),

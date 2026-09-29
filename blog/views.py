@@ -3,7 +3,7 @@ from .models import Post
 from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.forms import ImgForm
+from .forms import ImgForm
 from django.views.generic import DetailView, TemplateView
 from django.views.generic import TemplateView
 
@@ -16,7 +16,7 @@ class Image(TemplateView):
         form = ImgForm(request.POST, request.FILES)
         if form.is_valid():
             obj = form.save()
-            return HttpResponseRedirect(reverse_lazy('image_display', kwargs={'pk': obj.id}))
+            return HttpResponseRedirect(reverse_lazy('image_display', kwargs={'pk':obj.id}))
 
         context = self.get_context_data(form=form)
         return self.render_to_response(context)
